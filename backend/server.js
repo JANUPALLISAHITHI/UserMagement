@@ -281,4 +281,9 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use("/users", userRoutes);
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT,() => {try {console.log(`Server running on port ${PORT}`)}
+catch (err) {
+    console.error(err);
+  }}
+);
+
